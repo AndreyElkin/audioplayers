@@ -1,0 +1,258 @@
+.tracks-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tracks-table__header {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 4% 41% 24% 16% 12%;
+  gap: 0 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #E8E8E8;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #A4A4A4;
+}
+
+.tracks-table__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.tracks-table__row {
+  display: grid;
+  grid-template-columns: 4% 41% 24% 16% 12% 3%;
+  gap: 0 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.tracks-table__row:hover {
+  background-color: #f9f9f9;
+}
+
+.tracks-table__col {
+  display: flex;
+  align-items: center;
+}
+
+.tracks-table__track-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tracks-table__artwork {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f0f0f0;
+}
+
+.tracks-table__artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tracks-table__artwork--placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tracks-table__track-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tracks-table__track-title {
+  font-weight: 500;
+  color: #333;
+}
+
+.tracks-table__track-artist {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.tracks-table__favorite,
+.tracks-table__play {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #999;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.tracks-table__favorite:focus,
+.tracks-table__favorite:active,
+.tracks-table__play:focus,
+.tracks-table__play:active {
+  outline: none;
+}
+
+.tracks-table__favorite--active {
+  color: #FC6D3E;
+}
+
+.tracks-table__favorite--active svg {
+  color: #FC6D3E;
+}
+
+
+
+.tracks-table__col--actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .tracks-table__header {
+    display: none; /* Hide header on mobile */
+  }
+
+  .tracks-table__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .tracks-table__row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 0;
+    background: #FFFFFF;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .tracks-table__row:hover {
+    background-color: transparent;
+  }
+
+  .tracks-table__col {
+    display: flex;
+    align-items: center;
+  }
+
+  .tracks-table__col--number {
+    display: none; /* Hide number on mobile */
+  }
+
+  .tracks-table__col--name {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tracks-table__col--album {
+    display: none; /* Hide album column on mobile */
+  }
+
+  .tracks-table__col--date {
+    display: none; /* Hide date on mobile */
+  }
+
+  .tracks-table__col--duration {
+    display: none; /* Hide duration in row, it's in actions */
+  }
+
+  .tracks-table__col--actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  .tracks-table__track-info {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .tracks-table__artwork {
+    width: 56px;
+    height: 56px;
+    border-radius: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .tracks-table__track-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tracks-table__track-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #11253D;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+
+  .tracks-table__track-artist {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+
+  .tracks-table__favorite {
+    padding: 4px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tracks-table__favorite--active {
+    color: #FC6D3E;
+  }
+
+  .tracks-table__favorite--active svg {
+    fill: #FC6D3E;
+  }
+
+  .tracks-table__play {
+    padding: 4px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide duration text in actions on mobile - it's not shown in the design */
+  .tracks-table__col--actions .tracks-table__col--duration {
+    display: none;
+  }
+}
+

@@ -1,0 +1,141 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  gap: 24px;
+}
+
+.header__logo {
+  display: none; /* Hidden on desktop, shown on mobile */
+}
+
+.header__search {
+  flex: 1;
+  max-width: 798px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 12px;
+  background: #F5F5F5;
+  border-radius: 30px;
+}
+
+.header__search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  outline: none;
+  color: #666;
+}
+
+.header__search-input::placeholder {
+  color: #999;
+}
+
+.header__user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 246px;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  background: #F5F5F5;
+  border-radius: 30px;
+  transition: background-color 0.2s ease;
+}
+
+.header__user:hover {
+  background-color: #f5f5f5;
+}
+
+.header__user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.header__user-name {
+  flex: 1;
+  font-family: Actor;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+  letter-spacing: 1%;
+  color: #171717;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+    gap: 12px;
+    order: 1; /* Show first */
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex: 1;
+  }
+
+  .header__logo-icon {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .header__logo-text {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    color: #11253D;
+  }
+
+  .header__logo-img {
+    width: 178px;
+  }
+
+  .header__search {
+    display: none; /* Hide search on mobile for cleaner header */
+  }
+
+  .header__user {
+    width: auto;
+    padding: 0;
+    gap: 8px;
+    background: transparent;
+  }
+
+  .header__user-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .header__user-name {
+    display: block;
+    font-size: 14px;
+    color: #11253D;
+    font-family: Actor, sans-serif;
+  }
+
+  .header__user .arrow-icon {
+    display: none;
+  }
+}
+

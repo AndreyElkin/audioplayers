@@ -1,0 +1,165 @@
+.sidebar__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 19px 0;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sidebar {
+  width: 289px;
+  background: #F5F5F5;
+  border-right: 1px solid #e0e0e0;
+  min-height: calc(100vh - 80px);
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 11px;
+  padding: 39px 0;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 30px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  color: #11253D;
+  text-align: left;
+  width: 100%;
+  outline: none;
+}
+
+.sidebar__item:hover {
+  background-color: #f5f5f5;
+}
+
+.sidebar__item:active,
+.sidebar__item:focus,
+.sidebar__item:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.sidebar__item--active {
+  background-color: #fff5f0;
+  color: #ff6b35;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.sidebar__item--active:active,
+.sidebar__item--active:focus,
+.sidebar__item--active:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.sidebar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar__label {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0;
+    background: #FFFFFF;
+    order: 2; /* Show after header */
+  }
+
+  .sidebar__logo {
+    display: none; /* Hide logo in sidebar on mobile, it's in header */
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 12px 16px;
+    gap: 12px;
+    background-color: #F5F5F5;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+
+  .sidebar__item {
+    white-space: nowrap;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    min-width: fit-content;
+    flex: 1;
+    max-width: 50%;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: none;
+    color: #11253D;
+    text-align: center;
+    font-weight: 400;
+    gap: 8px;
+  }
+
+  .sidebar__item:hover {
+    background: #FC6D3E;
+  }
+
+
+  .sidebar__item--active {
+    padding: 16px;
+    background: #FC6D3E;
+    color: #FFFFFF;
+    border-color: #FC6D3E;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .sidebar__item:not(.sidebar__item--active) {
+    background: #FFFFFF;
+    color: #11253D;
+    border-color: #E0E0E0;
+  }
+
+  .sidebar__icon {
+    display: none; /* Hide default icon on mobile */
+  }
+
+  .sidebar__item[data-path="/tracks"] .sidebar__icon--stroke {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .sidebar__icon--stroke {
+    display: none; /* Hide stroke icon for items without strokeIcon */
+  }
+}
+

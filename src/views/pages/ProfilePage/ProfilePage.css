@@ -1,0 +1,80 @@
+.profile-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-page__title {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  color: #333;
+}
+
+.profile-page__content {
+  background: white;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-page__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  margin: 0 auto 24px;
+}
+
+.profile-page__info {
+  margin-bottom: 32px;
+}
+
+.profile-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.profile-page__label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.profile-page__value {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.profile-page__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-page__logout-button {
+  background-color: #ff6b35;
+  color: white;
+}
+
+.profile-page__logout-button:hover {
+  background-color: #e55a2b;
+}
+
+@media (max-width: 768px) {
+  .profile-page__content {
+    padding: 24px;
+  }
+
+  .profile-page__avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+}
+

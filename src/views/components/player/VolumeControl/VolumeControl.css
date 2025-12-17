@@ -1,0 +1,70 @@
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 120px;
+}
+
+.volume-control__button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  border-radius: 4px;
+}
+
+.volume-control__button:hover {
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.volume-control__slider {
+  flex: 1;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.volume-control__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #ff6b35;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.volume-control__slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.volume-control__slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #ff6b35;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.volume-control__slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .volume-control {
+    min-width: 100px;
+  }
+}
+

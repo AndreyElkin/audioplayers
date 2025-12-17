@@ -1,0 +1,146 @@
+.audio-player {
+  width: 100%;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 20px 30px;
+  flex-shrink: 0;
+}
+
+.audio-player__container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.audio-player__center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 600px;
+}
+
+.audio-player__mobile-wrapper {
+  display: contents; /* Don't create a wrapper on desktop */
+}
+
+.audio-player__mobile-play {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    background: #FFFFFF;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .audio-player__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Track info and play button at the top */
+  .audio-player__mobile-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    order: 1;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .audio-player__mobile-wrapper > .track-info {
+    flex: 1;
+    min-width: 0;
+    order: 1;
+    width: auto;
+    max-width: calc(100% - 80px);
+  }
+
+  .audio-player__mobile-wrapper > .audio-player__mobile-play {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Progress bar at the bottom */
+  .audio-player__center {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 16px 12px 16px;
+  }
+
+  .audio-player__center .progress-bar {
+    order: 1;
+    width: 100%;
+  }
+
+  /* Hide player controls on mobile */
+  .audio-player__center .player-controls {
+    display: none;
+  }
+
+  .audio-player__mobile-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    background: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  .audio-player__mobile-play:hover {
+    border-color: #FC6D3E;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .audio-player__mobile-play:active {
+    color: #FC6D3E;
+  }
+
+  .audio-player__mobile-play.player-controls__button--playing {
+    background: #FC6D3E;
+    color: #FFFFFF;
+    border-color: #FC6D3E;
+  }
+
+  .audio-player__mobile-play.player-controls__button--playing:hover {
+    background-color: #FC6D3E;
+    border-color: #FC6D3E;
+  }
+
+  .audio-player__mobile-play.player-controls__button--playing:active {
+    background-color: #FC6D3E;
+    border: 2px solid #FC6D3E;
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Hide volume control on mobile */
+  .audio-player__container > .volume-control {
+    display: none;
+  }
+}
+

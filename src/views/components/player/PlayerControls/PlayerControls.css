@@ -1,0 +1,137 @@
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.player-controls__button {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.player-controls__button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.player-controls__button:active {
+  color: #FC6D3E;
+}
+
+.player-controls__button:focus,
+.player-controls__button:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+
+.player-controls__button--active {
+  color: #FFFFFF;
+}
+
+.player-controls__button--active:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.player-controls__button--active:active {
+  color: #FC6D3E;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.player-controls__button--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.player-controls__button--disabled:hover {
+  background-color: transparent;
+}
+
+.player-controls__button--disabled:active {
+  color: #CCCCCC;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.player-controls__button--play {
+  overflow: visible;
+  border: 2px solid transparent;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.player-controls__button--play:hover {
+  border-color: #FC6D3E;
+}
+
+.player-controls__button--play.player-controls__button--playing {
+  background: #FC6D3E;
+  color: #FFFFFF;
+  border-color: #FC6D3E;
+}
+
+.player-controls__button--play.player-controls__button--playing:hover {
+  background-color: #FC6D3E;
+  border-color: #FC6D3E;
+}
+
+.player-controls__button--play.player-controls__button--playing:active {
+  background-color: #FC6D3E;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.player-controls__button--prev,
+.player-controls__button--next {
+  width: 32px;
+  height: 32px;
+}
+
+/* Плавный переход для всех SVG иконок */
+.player-controls__button svg,
+.player-controls__button svg path {
+  transition: fill 0.2s ease;
+}
+
+/* Изменение цвета иконок NextTrackIcon и SkipIcon при нажатии */
+.player-controls__button--prev:not(.player-controls__button--disabled):active svg,
+.player-controls__button--prev:not(.player-controls__button--disabled):active path,
+.player-controls__button--next:not(.player-controls__button--disabled):active svg,
+.player-controls__button--next:not(.player-controls__button--disabled):active path,
+.player-controls__button--skip-backward:active svg,
+.player-controls__button--skip-backward:active path,
+.player-controls__button--skip-forward:active svg,
+.player-controls__button--skip-forward:active path {
+  fill: #FC6D3E;
+}
+
+/* Исключаем disabled кнопки */
+.player-controls__button--disabled:active svg,
+.player-controls__button--disabled:active path {
+  fill: #CCCCCC;
+}
+
+@media (max-width: 768px) {
+  .player-controls {
+    gap: 12px;
+  }
+
+.player-controls__button--mobile {
+  display: none;
+}
+}
+
